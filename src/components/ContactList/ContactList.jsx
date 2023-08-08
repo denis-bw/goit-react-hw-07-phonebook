@@ -10,14 +10,14 @@ export const ContactList = () => {
   const contacts = useSelector(state => state.contactsDetails.contacts)
   const filterContacts = useSelector(state => state.contactsDetails.filter)
   const loader = useSelector(state => state.contactsDetails.contacts.isLoading)
-  
+  const error = useSelector(state => state.contactsDetails.contacts.error)
   useEffect(() => {
     dispatch(fetchContactsDataThunk());
   }, [dispatch]);
   
 
   const visibleContact = contacts.items.filter(constact => constact.name.toUpperCase().includes(filterContacts))
-
+    if(error){alert('Error operation failed')}
     return (loader && <Loader/>) || <ul className={css.container__contact}>
                        { visibleContact?.map(el => {
                           return <li className={css.item__contact} key={el.id}>

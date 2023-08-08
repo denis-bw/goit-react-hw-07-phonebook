@@ -10,10 +10,7 @@ export const fethContactsDelete = async (id) => await fetch(`https://64d1256eff9
      return response.json();
   }).then((data) => {
     return data;
-  }).catch(err => {
-      console.error(err)
-      return err
-  });
+  })
 
   export const fethContactsAdd = async ({createdAt, name, phone}) => await fetch(`https://64d1256eff953154bb7a0d1e.mockapi.io/contacts`, {
     method: "POST",
