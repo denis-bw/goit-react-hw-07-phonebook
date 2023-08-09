@@ -96,5 +96,5 @@ const initialState = {
 })
 
 
-export const { setContacts, deleteContact, filterOnName } = contactsDetailsSlice.actions;
+export const { filterOnName } = contactsDetailsSlice.actions;
 export const contactsDetailsReducer = contactsDetailsSlice.reducer;

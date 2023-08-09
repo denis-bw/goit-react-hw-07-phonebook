@@ -18,7 +18,6 @@ export function ContactForm() {
     if (equalNumber) return alert(`${equalNumber.phone} is already in contacts`);
 
     dispatch(fetchContactsAddThunk({
-      createdAt: new Date().toString(),
       name: name.value,
       phone: phone.value
     }))
